@@ -1,0 +1,14 @@
+type Mutation {
+    create(options: CreateContainerOptions!): Container!
+    stop(id: ID!): Container!
+    start(id: ID!): Container!
+    restart(id: ID!): Container!
+    delete(id: ID!, force: Boolean): Boolean!
+}
+
+input CreateContainerOptions {
+    name: String!
+    image: String!
+    cmd: String
+    start: Boolean
+}

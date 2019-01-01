@@ -1,0 +1,11 @@
+type Container {
+  id: ID!
+  names: [String!]!
+  command: String!
+  created: String!
+  image: String!
+  imageId: String!
+  state: String!
+  status: String!
+  log: String
+}
