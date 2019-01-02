@@ -1,6 +1,6 @@
 type Image {
   id: ID!
-  parentID: ID!
+  parentId: ID!
   size: String
   created: String
   repoTags: [String!]!
