@@ -1,0 +1,17 @@
+version: 2
+jobs:
+ build:
+   machine: true
+
+   steps:
+     - checkout
+
+     - run:
+          name: Server - Install, Build and Lint
+          command: yarn && yarn build
+     - run:
+          name: Deploy Docker
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              yarn publish-docker
+            fi

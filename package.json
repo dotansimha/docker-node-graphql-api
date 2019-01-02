@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "publish-docker": "./publish-docker.sh",
+    "build": "tsc",
     "start": "ts-node src/index.ts"
   },
   "dependencies": {
