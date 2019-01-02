@@ -5,7 +5,7 @@ import { containerModule } from './modules/container';
 import { imageModule } from './modules/image';
 
 async function main(): Promise<void> {
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3002;
   const socketPath = process.env.DOCKER_SOCK || '/var/run/docker.sock';
   const docker = new Docker({ socketPath });
 
