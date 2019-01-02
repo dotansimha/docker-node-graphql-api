@@ -26,6 +26,7 @@ export default ({ config }: GraphQLModule<ContainerModuleConfig>) => ({
         Image: options.image,
         name: options.name,
         Cmd: parsedCmd,
+        Env: options.env ? options.env.map(env => `${env.name}=${env.value}`) : [],
       });
 
       if (options.start) {

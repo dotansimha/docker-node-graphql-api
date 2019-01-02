@@ -10,6 +10,22 @@ type ContainerStatus {
   name: String!
   state: ContainerState!
   imageSha: String!
+  config: ContainerConfig!
+}
+
+type ContainerConfig {
+  hostname: String!
+  domainName: String!
+  user: String!
+  environmentVariables: [ContainerEnvVar]!
+  image: Image!
+  workingDir: String
+  entrypoint: String
+}
+
+type ContainerEnvVar {
+  name: String!
+  value: String!
 }
 
 type ContainerState {

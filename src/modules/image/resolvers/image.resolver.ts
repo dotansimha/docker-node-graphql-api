@@ -4,7 +4,7 @@ import { Image } from 'node-docker-api/lib/image';
 
 export default ({ config }: GraphQLModule<ImageModuleConfig>) => ({
   Image: {
-    id: (i: Image & any) => i.data.Id,
+    id: (i: Image & any) => i.id,
     parentId: (i: Image & any) => i.data.ParentId,
     created: (i: Image & any) => i.data.Created,
     size: (i: Image & any) => i.data.Size,

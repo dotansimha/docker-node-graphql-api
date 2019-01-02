@@ -8,5 +8,6 @@ export default ({ config }: GraphQLModule<ContainerModuleConfig>) => ({
     name: containerStatus => containerStatus.data.Name,
     imageSha: containerStatus => containerStatus.data.Image,
     state: containerStatus => containerStatus.data.State,
+    config: containerStatus => containerStatus.data.Config,
   },
 });
