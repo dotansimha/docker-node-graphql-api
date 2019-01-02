@@ -2,6 +2,7 @@ import { Docker } from 'node-docker-api';
 import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server';
 import { containerModule } from './modules/container';
+import { imageModule } from './modules/image';
 
 async function main(): Promise<void> {
   const port = process.env.PORT || 3000;
@@ -10,7 +11,10 @@ async function main(): Promise<void> {
 
   const api = new GraphQLModule({
     name: 'app',
-    imports: [containerModule.forRoot({ docker })],
+    imports: [
+      imageModule.forRoot({ docker }),
+      containerModule.forRoot({ docker }),
+    ],
   });
 
   const { schema, context } = api;

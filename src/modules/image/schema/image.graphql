@@ -1,0 +1,7 @@
+type Image {
+  id: ID!
+  parentID: ID!
+  size: String
+  created: String
+  repoTags: [String!]!
+}

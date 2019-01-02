@@ -1,0 +1,4 @@
+type Query {
+  images: [Image!]!
+  image(id: ID!): Image
+}

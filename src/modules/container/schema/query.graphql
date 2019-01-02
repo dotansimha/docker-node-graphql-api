@@ -1,3 +1,4 @@
 type Query {
   containers: [Container!]!
+  container(id: ID!): Container
 }
