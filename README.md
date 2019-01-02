@@ -16,4 +16,4 @@ docker run --name docker-api-graphql -d -p 8080:8080 -v /var/run/docker.sock:/va
 
 Your GraphQL API will be available now in: `http://YOUR-SERVER:8080/graphql`
 
-If you wish to have access to the GraphQL Playground (GraphiQL), add `-e NODE_ENV-"development"` to your run command, then go to `http://YOUR-SERVER:8080/graphiql`
+If you wish to have disable access to the GraphQL Playground (GraphiQL), add `-e NODE_ENV-"production"` to your run command.
