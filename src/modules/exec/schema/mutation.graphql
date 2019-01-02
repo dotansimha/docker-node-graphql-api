@@ -1,0 +1,14 @@
+type Mutation {
+  exec(options: ExecOptions!): Container!
+}
+
+input ExecOptions {
+  imageId: String!
+  command: String!
+  env: [EnvVariable]
+}
+
+input EnvVariable {
+  name: String!
+  value: String!
+}

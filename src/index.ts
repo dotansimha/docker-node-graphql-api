@@ -3,6 +3,7 @@ import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server';
 import { containerModule } from './modules/container';
 import { imageModule } from './modules/image';
+import { execModule } from './modules/exec';
 
 async function main(): Promise<void> {
   const port = process.env.PORT || 3000;
@@ -14,6 +15,7 @@ async function main(): Promise<void> {
     imports: [
       imageModule.forRoot({ docker }),
       containerModule.forRoot({ docker }),
+      execModule.forRoot({ docker }),
     ],
   });
 

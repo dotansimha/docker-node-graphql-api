@@ -7,8 +7,8 @@ type Mutation {
 }
 
 input CreateContainerOptions {
-    name: String!
     image: String!
+    name: String
     cmd: String
     start: Boolean
 }

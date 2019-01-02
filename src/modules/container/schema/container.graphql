@@ -1,11 +1,27 @@
 type Container {
   id: ID!
-  names: [String!]!
-  command: String!
-  created: String!
-  image: String!
-  imageId: String!
-  state: String!
-  status: String!
   log: String
+  status: ContainerStatus!
+}
+
+type ContainerStatus {
+  created: String!
+  path: String!
+  name: String!
+  state: ContainerState!
+  imageSha: String!
+}
+
+type ContainerState {
+  status: String!
+  running: Boolean!
+  paused: Boolean!
+  restarting: Boolean!
+  oomKilled: Boolean!
+  dead: Boolean!
+  pid: Int!
+  error: String
+  exitCode: Int!
+  startedAt: String!
+  finishedAt: String!
 }

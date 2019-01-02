@@ -4,14 +4,8 @@ import { ContainerModuleConfig } from '..';
 
 export default ({ config }: GraphQLModule<ContainerModuleConfig>) => ({
   Container: {
-    id: (c: Container & any) => c.data.Id,
-    names: (c: Container & any) => c.data.Names,
-    image: (c: Container & any) => c.data.Image,
-    imageId: (c: Container & any) => c.data.Image,
-    command: (c: Container & any) => c.data.Command,
-    created: (c: Container & any) => String(c.data.Created),
-    state: (c: Container & any) => c.data.State,
-    status: (c: Container & any) => c.data.Status,
+    id: (c: Container) => c.id,
+    status: (c: Container) => c.status(),
     log: async (c: Container) =>
       c
         .logs({
