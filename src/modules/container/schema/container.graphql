@@ -11,6 +11,7 @@ type ContainerStatus {
   state: ContainerState!
   imageSha: String!
   config: ContainerConfig!
+  mounts: [ContainerMount]
 }
 
 type ContainerConfig {
@@ -40,4 +41,13 @@ type ContainerState {
   exitCode: Int!
   startedAt: String!
   finishedAt: String!
+}
+
+type ContainerMount {
+  type: String!
+  source: String!
+  destination: String!
+  mode: String!
+  rw: String!
+  propagation: String!
 }
