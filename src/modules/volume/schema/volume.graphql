@@ -1,0 +1,12 @@
+scalar JSON
+
+type Volume {
+  id: ID!
+  created: String
+  driver: String
+  labels: [String!]!
+  mountpoint: String
+  name: String
+  options: JSON
+  scope: String
+}
