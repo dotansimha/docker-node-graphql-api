@@ -27,6 +27,7 @@ export default ({ config }: GraphQLModule<ContainerModuleConfig>) => ({
         name: options.name,
         Cmd: parsedCmd,
         Env: options.env ? options.env.map(env => `${env.name}=${env.value}`) : [],
+        Labels: options.labels ? options.labels.reduce((acc, label) => ({...acc, [label.name]: label.value}), {}) : {}
       });
 
       if (options.start) {

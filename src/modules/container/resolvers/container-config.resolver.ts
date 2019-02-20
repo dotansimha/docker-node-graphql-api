@@ -15,6 +15,11 @@ export default ({ config }: GraphQLModule<ContainerModuleConfig>) => ({
           value: split[1],
         };
       }),
+    labels: c =>
+      Object.keys(c.Labels).map(name => ({
+        name,
+        value: c.Labels[name],
+      })),
     image: async c => await config.docker.image.get(c.Image),
     workingDir: c => c.WorkingDir,
     entrypoint: c => c.Entrypoint,

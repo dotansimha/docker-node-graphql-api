@@ -18,12 +18,18 @@ type ContainerConfig {
   domainName: String!
   user: String!
   environmentVariables: [ContainerEnvVar]!
+  labels: [ContainerLabel]!
   image: Image!
   workingDir: String
   entrypoint: String
 }
 
 type ContainerEnvVar {
+  name: String!
+  value: String!
+}
+
+type ContainerLabel {
   name: String!
   value: String!
 }

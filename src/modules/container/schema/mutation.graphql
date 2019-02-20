@@ -12,9 +12,15 @@ input CreateContainerOptions {
   cmd: String
   start: Boolean
   env: [EnvVariable]
+  labels: [Label]
 }
 
 input EnvVariable {
+  name: String!
+  value: String!
+}
+
+input Label {
   name: String!
   value: String!
 }
