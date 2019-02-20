@@ -6,6 +6,7 @@ export default ({ config }: GraphQLModule<ContainerModuleConfig>) => ({
     hostname: c => c.Hostname,
     domainName: c => c.Domainname,
     user: c => c.User,
+    exposedPorts: c => (c.ExposedPorts ? Object.keys(c.ExposedPorts) : []),
     environmentVariables: c =>
       (c.Env || []).map(env => {
         const split = env.split('=');
@@ -22,6 +23,6 @@ export default ({ config }: GraphQLModule<ContainerModuleConfig>) => ({
       })),
     image: async c => await config.docker.image.get(c.Image),
     workingDir: c => c.WorkingDir,
-    entrypoint: c => Array.isArray(c.Entrypoint) ? c.Entrypoint : [c.Entrypoint],
+    entrypoint: c => (Array.isArray(c.Entrypoint) ? c.Entrypoint : [c.Entrypoint]),
   },
 });
