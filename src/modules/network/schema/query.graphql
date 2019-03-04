@@ -1,0 +1,4 @@
+type Query {
+  networks: [Network!]!
+  network(id: ID!): Network
+}

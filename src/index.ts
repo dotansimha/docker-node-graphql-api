@@ -3,6 +3,7 @@ import { GraphQLModule } from '@graphql-modules/core';
 import { ApolloServer } from 'apollo-server';
 import { containerModule } from './modules/container';
 import { imageModule } from './modules/image';
+import { networkModule } from './modules/network';
 import { volumeModule } from './modules/volume';
 
 async function main(): Promise<void> {
@@ -13,8 +14,9 @@ async function main(): Promise<void> {
   const api = new GraphQLModule({
     name: 'app',
     imports: [
-      imageModule.forRoot({ docker }),
       containerModule.forRoot({ docker }),
+      imageModule.forRoot({ docker }),
+      networkModule.forRoot({ docker }),
       volumeModule.forRoot({ docker }),
     ],
   });

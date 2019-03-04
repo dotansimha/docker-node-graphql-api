@@ -1,0 +1,39 @@
+scalar JSON
+
+type Network {
+  id: ID!
+  name: String
+  created: String
+  driver: String
+  scope: String
+  enableIPv6: Boolean
+  IPAM: NetworkConfigIPAM
+  internal: Boolean
+  attachable: Boolean
+  ingress: Boolean
+  configFrom: NetworkConfigFrom
+  configOnly: Boolean
+  containers: JSON,
+  options: JSON
+  labels: [NetworkLabel]
+}
+
+type NetworkLabel {
+  name: String
+  value: String
+}
+
+type NetworkConfigFrom {
+  network: String
+}
+
+type NetworkConfigIPAM {
+  driver: String
+  options: JSON,
+  config: [NetworkConfigIPAMConfig],
+}
+
+type NetworkConfigIPAMConfig {
+  subnet: String
+  gateway: String
+}
