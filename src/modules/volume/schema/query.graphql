@@ -1,0 +1,4 @@
+type Query {
+  volumes: [Volume!]!
+  volume(id: ID!): Volume
+}
