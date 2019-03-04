@@ -20,7 +20,7 @@ type ContainerConfig {
   environmentVariables: [ContainerEnvVar]!
   image: Image!
   workingDir: String
-  entrypoint: String
+  entrypoint: [String]
 }
 
 type ContainerEnvVar {
