@@ -12,12 +12,14 @@ type ContainerStatus {
   imageSha: String!
   config: ContainerConfig!
   mounts: [ContainerMount]
+  networkSettings: ContainerNetworkSettings
 }
 
 type ContainerConfig {
   hostname: String!
   domainName: String!
   user: String!
+  exposedPorts: [String]
   environmentVariables: [ContainerEnvVar]!
   labels: [ContainerLabel]!
   image: Image!
@@ -57,4 +59,24 @@ type ContainerMount {
   mode: String!
   rw: String!
   propagation: String!
+}
+
+type ContainerNetworkSettings {
+    ports: [ContainerPort]
+    networks: [ContainerNetwork]
+}
+
+type ContainerPort {
+    exposedPort: String
+    hostIp: String
+    hostPort: String
+}
+
+type ContainerNetwork {
+    id: String
+    name: String
+    aliases: [String]
+    gateway: String
+    ipAddress: String
+    macAddress: String
 }

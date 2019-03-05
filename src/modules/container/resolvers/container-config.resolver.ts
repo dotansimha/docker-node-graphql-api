@@ -6,6 +6,7 @@ export default ({ config }: GraphQLModule<ContainerModuleConfig>) => ({
     hostname: c => c.Hostname,
     domainName: c => c.Domainname,
     user: c => c.User,
+    exposedPorts: c => (c.ExposedPorts ? Object.keys(c.ExposedPorts) : []),
     environmentVariables: c =>
       (c.Env || []).map(env => {
         const split = env.split('=');
