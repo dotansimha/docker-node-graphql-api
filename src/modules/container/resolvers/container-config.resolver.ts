@@ -23,6 +23,7 @@ export default ({ config }: GraphQLModule<ContainerModuleConfig>) => ({
       })),
     image: async c => await config.docker.image.get(c.Image),
     workingDir: c => c.WorkingDir,
-    entrypoint: c => (Array.isArray(c.Entrypoint) ? c.Entrypoint : [c.Entrypoint]),
+    entrypoint: c => Array.isArray(c.Entrypoint) ? c.Entrypoint : [c.Entrypoint],
+    cmd: c => Array.isArray(c.Cmd) ? c.Cmd : [c.Cmd],
   },
 });

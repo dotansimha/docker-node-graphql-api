@@ -9,7 +9,7 @@ type Mutation {
 input CreateContainerOptions {
   image: String!
   name: String
-  cmd: String
+  cmd: [String]
   start: Boolean
   env: [EnvVariable]
   labels: [Label]

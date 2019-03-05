@@ -25,6 +25,7 @@ type ContainerConfig {
   image: Image!
   workingDir: String
   entrypoint: [String]
+  cmd: [String]
 }
 
 type ContainerEnvVar {
