@@ -21,6 +21,7 @@ export default ({ config }: GraphQLModule<ContainerModuleConfig>) => ({
     start: (root: never, { id }) => config.docker.container.get(id).start(),
     restart: (root: never, { id }) => config.docker.container.get(id).restart(),
     stop: (root: never, { id }) => config.docker.container.get(id).stop(),
+    kill: (root: never, { id }) => config.docker.container.get(id).kill(),
     delete: async (root: never, { id, force }) => {
       await config.docker.container.get(id).delete({ force: !!force });
 
